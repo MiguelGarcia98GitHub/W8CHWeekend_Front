@@ -1,11 +1,10 @@
-import { useCharacters } from "../../hooks/useCharacters";
+import { useRobots } from "./../../hooks/useRobots";
 
 export function Sample() {
-    const { characters, handleDelete, handleUpdate } = useCharacters();
-    console.log(characters);
+    const { robots, handleDelete, handleUpdate } = useRobots();
     return (
         <ul>
-            {characters.map((item) => (
+            {robots.map((item) => (
                 <li key={item.id}>
                     <div key={item.id}>{item.name}</div>
                     <button
@@ -13,7 +12,7 @@ export function Sample() {
                             handleDelete(item);
                         }}
                     >
-                        DELETE CHARACTER {item.id}
+                        DELETE ROBOT WITH THE ID: {item.id}
                     </button>
                     <input
                         type="checkbox"

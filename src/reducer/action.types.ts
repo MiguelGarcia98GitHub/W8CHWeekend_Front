@@ -1,13 +1,13 @@
 export const actionTypes = {
-    add: "tasks@add",
-    delete: "tasks@delete",
-    update: "tasks@update",
-    load: "task@load",
+    add: "robot@add",
+    delete: "robot@delete",
+    update: "robot@update",
+    load: "robot@load",
 };
 
 export enum actionTypesE {
-    add = "tasks@add",
-    delete = "tasks@delete",
-    update = "tasks@update",
-    load = "task@load",
+    add = "robot@add",
+    delete = "robot@delete",
+    update = "robot@update",
+    load = "robots@load",
 }

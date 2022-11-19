@@ -1,7 +1,7 @@
 import { createAction } from "@reduxjs/toolkit";
 
 import { actionTypes } from "./action.types";
-import { ProtoRobot } from "./../models/character";
+import { ProtoRobot } from "../models/robot";
 
 export const loadActionCreator = createAction<Array<ProtoRobot>>(
     actionTypes.load

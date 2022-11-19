@@ -15,7 +15,7 @@ describe("Given App component", () => {
                 </Router>
             );
 
-            const element = screen.getByText("React");
+            const element = screen.getByText("Robots");
             expect(element).toBeInTheDocument();
         });
     });

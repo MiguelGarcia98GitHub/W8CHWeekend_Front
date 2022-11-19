@@ -23,7 +23,7 @@ describe("Given the Sample component", () => {
             </Router>
         );
         const button1 = screen.getByRole("button", {
-            name: "DELETE CHARACTER 1",
+            name: "DELETE ROBOT 1",
         });
 
         await fireEvent.click(button1);

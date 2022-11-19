@@ -1,20 +1,21 @@
 import { useState } from "react";
-import { useCharacters } from "../../hooks/useCharacters";
-import { ProtoRobot } from "../../models/character";
+import { useRobots } from "../../hooks/useRobots";
+
+import { ProtoRobot } from "../../models/robot";
 
 export const Form = () => {
-    const { handleAdd } = useCharacters();
+    const { handleAdd } = useRobots();
 
-    const [character, setCharacter] = useState({});
+    const [robot, setRobot] = useState({});
 
     return (
         <div>
             <form action="">
                 <input
                     type="text"
-                    placeholder="name of character"
+                    placeholder="name of robot"
                     onChange={(e) => {
-                        setCharacter({
+                        setRobot({
                             name: e.target.value,
                             resistance: "9",
                             speed: "9",
@@ -25,15 +26,15 @@ export const Form = () => {
                 <button
                     onClick={(e) => {
                         e.preventDefault();
-                        setCharacter({
-                            ...character,
+                        setRobot({
+                            ...robot,
                         });
                         handleAdd({
-                            ...(character as ProtoRobot),
+                            ...(robot as ProtoRobot),
                         });
                     }}
                 >
-                    ADD CHARACTER
+                    ADD ROBOT
                 </button>
             </form>
         </div>

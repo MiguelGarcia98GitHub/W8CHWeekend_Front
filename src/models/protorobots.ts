@@ -1,4 +1,5 @@
-import { ProtoRobot } from "./character";
-export interface ProtoRobotsObject {
-    robots: Array<ProtoRobot>;
-}
+// import { ProtoRobot } from "./robot";
+// export interface ProtoRobotsObject {
+//     robots: Array<ProtoRobot>;
+// }
+export {};

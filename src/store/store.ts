@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { characterReducer } from "../reducer/reducer";
+import { robotReducer } from "../reducer/reducer";
 
 export const appStore = configureStore({
     reducer: {
-        robots: characterReducer,
+        robots: robotReducer,
     },
 });
 

@@ -1,10 +1,10 @@
 import { Repository } from "./repository";
-import { ProtoRobot } from "./../models/character";
+import { ProtoRobot } from "../models/robot";
 
-export class CharacterRepository implements Repository<ProtoRobot> {
+export class RobotRepository implements Repository<ProtoRobot> {
     url: string;
     constructor(url = "https://w8chweekend.onrender.com/robots") {
-        this.url = url ? url : (process.env.REACT_APP_URL_CHARACTERS as string);
+        this.url = url ? url : (process.env.REACT_APP_URL_ROBOTS as string);
     }
 
     createError(response: Response) {
@@ -29,10 +29,10 @@ export class CharacterRepository implements Repository<ProtoRobot> {
     }
 
     // create / post
-    create(task: Partial<ProtoRobot>): Promise<ProtoRobot> {
+    create(robot: Partial<ProtoRobot>): Promise<ProtoRobot> {
         return fetch(this.url, {
             method: "POST",
-            body: JSON.stringify(task),
+            body: JSON.stringify(robot),
             headers: {
                 "content-type": "application/json",
             },
@@ -43,8 +43,8 @@ export class CharacterRepository implements Repository<ProtoRobot> {
     }
 
     // delete
-    delete(character: ProtoRobot): Promise<void> {
-        return fetch(`${this.url}/${character.id}`, {
+    delete(robot: ProtoRobot): Promise<void> {
+        return fetch(`${this.url}/${robot.id}`, {
             method: "DELETE",
         }).then((response) => {
             if (!response.ok) throw this.createError(response);
@@ -52,10 +52,10 @@ export class CharacterRepository implements Repository<ProtoRobot> {
     }
 
     // update / patch
-    update(partialTask: Partial<ProtoRobot>): Promise<ProtoRobot> {
-        return fetch(`${this.url}/${partialTask.id}`, {
+    update(partialRobot: Partial<ProtoRobot>): Promise<ProtoRobot> {
+        return fetch(`${this.url}/${partialRobot.id}`, {
             method: "PATCH",
-            body: JSON.stringify(partialTask),
+            body: JSON.stringify(partialRobot),
             headers: {
                 "content-type": "application/json",
             },
