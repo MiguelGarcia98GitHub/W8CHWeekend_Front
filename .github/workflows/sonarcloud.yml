@@ -26,10 +26,6 @@ jobs:
         run: npm ci
       - name: Testing coverage
         run: npm run test:prod #Change for a valid npm script
-        env:
-          USER: ${{ secrets.USER }}
-          PASSWD: ${{ secrets.PASSWD }}
-          CLUSTER: ${{ secrets.CLUSTER }}
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
@@ -42,7 +38,7 @@ jobs:
           args:
             # Unique keys of your project and organization. You can find them in SonarCloud > Information (bottom-left menu)
             # mandatory
-            -Dsonar.projectKey=MiguelGarcia98GitHub_W8CHWeekend
+            -Dsonar.projectKey=MiguelGarcia98GitHub_W8CHWeekend_Front
             -Dsonar.organization=miguelgarcia98github
             # Comma-separated paths to directories containing main source files.
             #-Dsonar.sources= # optional, default is project base directory

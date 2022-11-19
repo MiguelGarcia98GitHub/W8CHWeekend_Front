@@ -22,11 +22,9 @@ describe("Given the Sample component", () => {
                 </Provider>
             </Router>
         );
-        const button1 = screen.getByRole("button", {
-            name: "DELETE ROBOT 1",
-        });
+        const buttons = await screen.findAllByRole("button");
 
-        await fireEvent.click(button1);
+        await fireEvent.click(buttons[0]);
     });
     test("when we click the checkbox, it should execute the checkbox associated functionalities", async () => {
         render(
