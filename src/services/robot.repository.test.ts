@@ -8,7 +8,7 @@ describe("Given an instance of RobotApi Service", () => {
     });
 
     describe("When we use service.getAll()", () => {
-        test(`Then if all are OK, it should return a Promise of an Array of Task`, async () => {
+        test(`Then if all are OK, it should return a Promise of an Array of Robots`, async () => {
             const response = {
                 ok: true,
                 json: jest.fn().mockResolvedValue([]),
