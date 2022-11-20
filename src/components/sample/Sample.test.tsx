@@ -23,8 +23,6 @@ describe("Given the Sample component", () => {
             </Router>
         );
         const buttons = await screen.findAllByRole("button");
-        console.log(buttons);
-
         await fireEvent.click(buttons[0]);
     });
     test("when we click the checkbox, it should execute the checkbox associated functionalities", async () => {
