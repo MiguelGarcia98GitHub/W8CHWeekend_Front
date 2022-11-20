@@ -23,6 +23,7 @@ describe("Given the Sample component", () => {
             </Router>
         );
         const buttons = await screen.findAllByRole("button");
+        console.log(buttons);
 
         await fireEvent.click(buttons[0]);
     });

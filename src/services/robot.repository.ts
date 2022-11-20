@@ -4,7 +4,7 @@ import { ProtoRobot } from "../models/robot";
 export class RobotRepository implements Repository<ProtoRobot> {
     url: string;
     constructor(url = "https://w8chweekend.onrender.com/robots") {
-        this.url = url ? url : (process.env.REACT_APP_URL_ROBOTS as string);
+        this.url = url;
     }
 
     createError(response: Response) {
